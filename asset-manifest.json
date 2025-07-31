@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/kbpua/PORTFOLIO.git/static/css/main.e0da290e.css",
+    "main.js": "/kbpua/PORTFOLIO.git/static/js/main.88e1efac.js",
+    "static/js/453.4284cb08.chunk.js": "/kbpua/PORTFOLIO.git/static/js/453.4284cb08.chunk.js",
+    "index.html": "/kbpua/PORTFOLIO.git/index.html",
+    "main.e0da290e.css.map": "/kbpua/PORTFOLIO.git/static/css/main.e0da290e.css.map",
+    "main.88e1efac.js.map": "/kbpua/PORTFOLIO.git/static/js/main.88e1efac.js.map",
+    "453.4284cb08.chunk.js.map": "/kbpua/PORTFOLIO.git/static/js/453.4284cb08.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e0da290e.css",
+    "static/js/main.88e1efac.js"
+  ]
+}
