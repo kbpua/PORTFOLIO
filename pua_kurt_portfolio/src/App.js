@@ -126,7 +126,12 @@ function CVPage() {
     <div className='CVPage'>
       <p className='headline'>Curriculum Vitae</p>
       <section className='CVSection'>
-      <iframe src={process.env.PUBLIC_URL + 'https://drive.google.com/file/d/1yUihLTyKmcmnOh1CDU5SWOYtcooxnGXn/preview'} 
+      <iframe
+      src="https://drive.google.com/file/d/1yUihLTyKmcmnOh1CDU5SWOYtcooxnGXn/preview" 
+      title="Curriculum Vitae"
+      frameBorder="0"
+      allow="autoplay; encrypted-media"
+      allowFullScreen
       width= "800px" 
       height="1120px"
       style={{border: 'none', minHeight: '500px', background: '#fff'}}
@@ -151,12 +156,12 @@ function ProjectsPage() {
     <div className ="projects">
       <br/>
   
-        <a href="https://kbpua.github.io/sudoku/" ><img src="sudoku.png" className = "project-icon" alt = "sudoku"/></a>
-        <a href="https://kbpua.github.io/tic-tac-toe/"><img src="tic-tac-toe.png" alt="tic-tac-toe" className = "project-icon"/></a>
-        <a href="https://kbpua.github.io/planner/"><img src="planner.png" className = "project-icon" alt = "planner"/></a>
-        <a href="https://kbpua.github.io/qma-app/"><img src="QMA.png" className = "project-icon" alt = "quine-mccluskey"/></a>
-        <a href="https://kbpua.github.io/SAS-1-FINAL-PROJECT/"><img src="SAS.png" className = "project-icon" alt = "sas-1-final-project"/></a>
-        <a href="https://kbpua.github.io/-COMM-10-SENATOR-WEBSITE/"><img src="political.png" className = "project-icon" alt = "political-website"/></a>
+        <a href="https://kbpua.github.io/sudoku/" target='_blank' rel="noopener noreferrer"><img src={process.env.PUBLIC_URL + '/sudoku.png'} alt="sudoku" className='project-icon'/></a>
+        <a href="https://kbpua.github.io/tic-tac-toe/" target='_blank' rel="noopener noreferrer"><img src={process.env.PUBLIC_URL + '/tic-tac-toe.png'} alt="tic-tac-toe" className = "project-icon"/></a>
+        <a href="https://kbpua.github.io/planner/" target='_blank' rel="noopener noreferrer"><img src={process.env.PUBLIC_URL + '/planner.png'} className = "project-icon" alt = "planner"/></a>
+        <a href="https://kbpua.github.io/qma-app/" target='_blank' rel="noopener noreferrer"><img src={process.env.PUBLIC_URL + '/QMA.png'} className = "project-icon" alt = "quine-mccluskey"/></a>
+        <a href="https://kbpua.github.io/SAS-1-FINAL-PROJECT/" target='_blank' rel="noopener noreferrer"><img src={process.env.PUBLIC_URL + '/sas.png'} className = "project-icon" alt = "sas-1-final-project"/></a>
+        <a href="https://kbpua.github.io/-COMM-10-SENATOR-WEBSITE/" target='_blank' rel="noopener noreferrer"><img src={process.env.PUBLIC_URL + '/political.png'} className = "project-icon" alt = "political-website"/></a>
     </div>
     <br/>
     <p className='details'>Here are some of my projects:</p>
@@ -184,6 +189,7 @@ function App() {
         <main>
       <NavBar />
       <Routes>
+        <Route path="*" element={<HomePage />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/resume" element={<CVPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
