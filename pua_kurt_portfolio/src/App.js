@@ -127,7 +127,7 @@ function CVPage() {
       <p className='headline'>Curriculum Vitae</p>
       <section className='CVSection'>
       <iframe
-      src="https://drive.google.com/file/d/1yUihLTyKmcmnOh1CDU5SWOYtcooxnGXn/preview" 
+      src="https://drive.google.com/file/d/1QA5pXcPENmyW_aVs_tKbw_UJEtBGGWEZ/preview" 
       title="Curriculum Vitae"
       frameBorder="0"
       allow="autoplay; encrypted-media"
