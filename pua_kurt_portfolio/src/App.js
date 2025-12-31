@@ -138,7 +138,7 @@ function CVPage() {
       ></iframe>
       </section>
       <p className='details'> If file fails to load, click this link to access it:</p>
-      <a href = "https://drive.google.com/file/d/1yUihLTyKmcmnOh1CDU5SWOYtcooxnGXn/view?usp=sharing">Curriculum Vitae</a>
+      <a href = "https://drive.google.com/file/d/1QA5pXcPENmyW_aVs_tKbw_UJEtBGGWEZ/view?usp=sharing">Curriculum Vitae</a>
     </div>
   );
 }
