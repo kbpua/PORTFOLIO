@@ -74,10 +74,10 @@ const HeroSection = () => {
           />
         </div>
         <figcaption className="hero__caption hero__caption--default">
-          {isDark ? 'Manila skyline · Night edition' : 'Antipolo, Rizal, Philippines'}
+          {isDark ? 'I\'m from Manila, Philippines, let\'s connect!' : 'I\'m from Manila, Philippines, let\'s connect!'}
         </figcaption>
         <figcaption className="hero__caption hero__caption--hover" aria-hidden="true">
-          Hey, you · Thanks for reading
+          Seems you're interested in my work, let's connect!
         </figcaption>
       </motion.figure>
     </motion.section>

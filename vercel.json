@@ -2,8 +2,8 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "installCommand": "npm install --prefix pua_kurt_portfolio",
   "buildCommand": "npm run build --prefix pua_kurt_portfolio",
-  "outputDirectory": "pua_kurt_portfolio/build",
-  "framework": "create-react-app",
+  "outputDirectory": "pua_kurt_portfolio/dist",
+  "framework": "vite",
   "rewrites": [
     {
       "source": "/(.*)",
