@@ -200,6 +200,18 @@
   color: var(--color-accent);
 }
 
+.project-card__title-text {
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-text);
+}
+
+.project-card--soon .project-card__actions {
+  justify-content: flex-end;
+}
+
 .project-card__description {
   margin: 0;
   font-family: var(--font-serif);

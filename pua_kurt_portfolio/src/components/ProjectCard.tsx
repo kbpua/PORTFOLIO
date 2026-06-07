@@ -33,6 +33,29 @@ const ProjectCard = ({ project, compact = false }: ProjectCardProps) => {
     }
   };
 
+  const imageBlock = (
+    <div className="project-card__image-wrap">
+      {isComingSoon && (
+        <span className="project-card__badge">Future issue</span>
+      )}
+      <motion.img
+        src={imageSrc}
+        alt=""
+        className="project-card__image"
+        onError={handleImageError}
+        loading="lazy"
+        decoding="async"
+        whileHover={
+          isComingSoon || reduceMotion ? undefined : { scale: 1.02 }
+        }
+        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+      />
+      {!isComingSoon && (
+        <span className="project-card__preview-hint">Read briefing</span>
+      )}
+    </div>
+  );
+
   return (
     <motion.article
       id={`project-${project.id}`}
@@ -42,41 +65,32 @@ const ProjectCard = ({ project, compact = false }: ProjectCardProps) => {
       }
       transition={{ type: 'spring', stiffness: 400, damping: 28 }}
     >
-      <button
-        type="button"
-        className="project-card__preview-trigger"
-        onClick={() => openPreview(project)}
-        aria-label={`Open preview for ${project.title}`}
-      >
-        <div className="project-card__image-wrap">
-          {isComingSoon && (
-            <span className="project-card__badge">Future issue</span>
-          )}
-          <motion.img
-            src={imageSrc}
-            alt=""
-            className="project-card__image"
-            onError={handleImageError}
-            loading="lazy"
-            decoding="async"
-            whileHover={
-              isComingSoon || reduceMotion ? undefined : { scale: 1.02 }
-            }
-            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          />
-          <span className="project-card__preview-hint">Read briefing</span>
-        </div>
-      </button>
+      {isComingSoon ? (
+        imageBlock
+      ) : (
+        <button
+          type="button"
+          className="project-card__preview-trigger"
+          onClick={() => openPreview(project)}
+          aria-label={`Open preview for ${project.title}`}
+        >
+          {imageBlock}
+        </button>
+      )}
 
       <div className="project-card__body">
         <h3 className="project-card__title">
-          <button
-            type="button"
-            className="project-card__title-button"
-            onClick={() => openPreview(project)}
-          >
-            {project.title}
-          </button>
+          {isComingSoon ? (
+            <span className="project-card__title-text">{project.title}</span>
+          ) : (
+            <button
+              type="button"
+              className="project-card__title-button"
+              onClick={() => openPreview(project)}
+            >
+              {project.title}
+            </button>
+          )}
         </h3>
         <p className="project-card__description">{project.description}</p>
         <div className="project-card__tags">
@@ -87,13 +101,15 @@ const ProjectCard = ({ project, compact = false }: ProjectCardProps) => {
           ))}
         </div>
         <div className="project-card__actions">
-          <Button
-            variant="secondary"
-            className="btn--sm"
-            onClick={() => openPreview(project)}
-          >
-            Briefing
-          </Button>
+          {!isComingSoon && (
+            <Button
+              variant="secondary"
+              className="btn--sm"
+              onClick={() => openPreview(project)}
+            >
+              Briefing
+            </Button>
+          )}
           {isComingSoon ? (
             <span className="project-card__status">Future issue</span>
           ) : (
