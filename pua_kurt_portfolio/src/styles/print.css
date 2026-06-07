@@ -1,0 +1,89 @@
+@media print {
+  .paper-bg,
+  .reading-progress,
+  .nav-bar,
+  .back-to-top,
+  .project-preview,
+  .theme-toggle,
+  .nav-bar__toggle {
+    display: none !important;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .layout,
+  .layout__main,
+  .landing {
+    display: block !important;
+  }
+
+  .masthead {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    page-break-after: avoid;
+  }
+
+  .masthead__title {
+    font-size: 2.25rem;
+  }
+
+  .section {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-top: 1px solid #ccc !important;
+  }
+
+  .section-header {
+    border-bottom-color: #000 !important;
+  }
+
+  .hero__photo {
+    filter: none !important;
+    max-width: 200px;
+  }
+
+  .project-card__image {
+    filter: none !important;
+  }
+
+  .project-card__image-wrap::after {
+    display: none !important;
+  }
+
+  .btn,
+  .project-card__status,
+  .footer__social {
+    display: none !important;
+  }
+
+  #resume {
+    border: 2px solid #000;
+    padding: 1.5rem !important;
+  }
+
+  .cv-panel {
+    border: none !important;
+  }
+
+  a[href]::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.75rem;
+    color: #444;
+  }
+
+  a[href^='#']::after {
+    content: '';
+  }
+
+  .footer {
+    margin-top: 2rem;
+    border-top: 1px solid #000 !important;
+    page-break-before: avoid;
+  }
+}

@@ -1,30 +1,44 @@
-import { Link } from 'react-router-dom';
-import type { ButtonHTMLAttributes, ReactNode } from 'react';
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
 import type { ButtonVariant } from '../types';
+import { prefetchUrl } from '../utils/prefetch';
 import './Button.css';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   variant?: ButtonVariant;
-  to?: string;
+  hash?: string;
   href?: string;
   className?: string;
 }
 
+type AnchorButtonProps = ButtonProps &
+  Pick<AnchorHTMLAttributes<HTMLAnchorElement>, 'onMouseEnter' | 'onFocus'>;
+
+const isExternalHref = (href: string) => /^https?:\/\//i.test(href);
+
 const Button = ({
   children,
   variant = 'primary',
-  to,
+  hash,
   href,
   className = '',
-}: ButtonProps) => {
+  onMouseEnter,
+  onFocus,
+  ...rest
+}: AnchorButtonProps) => {
   const classes = `btn btn--${variant} ${className}`.trim();
 
-  if (to) {
+  const handlePrefetch = () => {
+    if (href && isExternalHref(href)) {
+      prefetchUrl(href);
+    }
+  };
+
+  if (hash) {
     return (
-      <Link to={to} className={classes}>
+      <a href={hash} className={classes}>
         {children}
-      </Link>
+      </a>
     );
   }
 
@@ -33,8 +47,17 @@ const Button = ({
       <a
         href={href}
         className={classes}
-        target="_blank"
-        rel="noopener noreferrer"
+        onMouseEnter={(event) => {
+          handlePrefetch();
+          onMouseEnter?.(event);
+        }}
+        onFocus={(event) => {
+          handlePrefetch();
+          onFocus?.(event);
+        }}
+        {...(isExternalHref(href)
+          ? { target: '_blank', rel: 'noopener noreferrer' }
+          : {})}
       >
         {children}
       </a>
@@ -42,7 +65,7 @@ const Button = ({
   }
 
   return (
-    <button type="button" className={classes}>
+    <button type="button" className={classes} {...rest}>
       {children}
     </button>
   );

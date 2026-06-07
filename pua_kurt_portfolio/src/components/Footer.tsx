@@ -1,5 +1,5 @@
 import { socialLinks } from '../data/contact';
-import { asset } from '../utils/assets';
+import ContactIcon from './icons/ContactIcon';
 import './Footer.css';
 
 const Footer = () => {
@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer__inner">
         <p className="footer__copy">
-          © {new Date().getFullYear()} Kurt Pua. All rights reserved.
+          © {new Date().getFullYear()} The Kurt Pua Tribune — All rights reserved.
         </p>
         <div className="footer__social">
           {socialLinks.map((link) => (
@@ -19,7 +19,7 @@ const Footer = () => {
               className="footer__social-link"
               aria-label={link.label}
             >
-              <img src={asset(link.icon)} alt="" className="footer__social-icon" />
+              <ContactIcon id={link.icon} className="footer__social-icon" size={24} />
             </a>
           ))}
         </div>

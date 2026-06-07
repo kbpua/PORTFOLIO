@@ -1,0 +1,16 @@
+.cv-panel {
+  max-width: 440px;
+  margin: 0 auto;
+  padding: var(--space-lg) 0;
+  text-align: center;
+  border: none;
+  background: transparent;
+}
+
+.cv-panel__text {
+  margin: 0 0 var(--space-md);
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}

@@ -2,18 +2,55 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/up.png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-dark-32.png"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#7c6cf0" />
+    <meta name="theme-color" content="#f4f1ea" />
     <meta
       name="description"
-      content="Kurt Pua — Computer Science student at UP Manila. Portfolio of web apps, algorithm visualizers, and projects."
+      content="Kurt Pua — Computer Science student at UP Manila. Portfolio of web apps, hackathon projects, and client work."
     />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="The Kurt Pua Tribune" />
+    <meta
+      property="og:description"
+      content="All the code fit to ship — client projects, hackathon wins, and apps in development from a UP Manila CS student."
+    />
+    <meta property="og:image" content="/profile.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Kurt Pua Tribune" />
+    <meta
+      name="twitter:description"
+      content="All the code fit to ship — client projects, hackathon wins, and apps in development."
+    />
+    <meta name="twitter:image" content="/profile.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="apple-touch-icon" href="/up.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
-    <title>Kurt's Portfolio</title>
+    <title>The Kurt Pua Tribune</title>
+    <script>
+      (function () {
+        var storageKey = 'portfolio-theme';
+        var stored = localStorage.getItem(storageKey);
+        var theme =
+          stored === 'dark' || stored === 'light'
+            ? stored
+            : window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.style.colorScheme = theme;
+      })();
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

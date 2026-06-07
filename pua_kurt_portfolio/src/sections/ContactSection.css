@@ -1,0 +1,129 @@
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  align-items: start;
+}
+
+.contact-profile {
+  text-align: center;
+  padding: var(--space-md) 0;
+  background: transparent;
+}
+
+.contact-profile__photo {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  margin-bottom: var(--space-sm);
+  filter: grayscale(20%);
+}
+
+.contact-profile__name {
+  margin: 0 0 0.25rem;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.contact-profile__role {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-style: italic;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.contact-group {
+  padding: var(--space-sm) 0;
+  background: transparent;
+}
+
+.contact-group__title {
+  margin: 0 0 var(--space-md);
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.contact-list__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.contact-list__icon {
+  display: block;
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+  transition: color var(--transition-base);
+}
+
+.contact-list__item:hover .contact-list__icon,
+.contact-list__item:focus-within .contact-list__icon {
+  color: var(--color-text);
+}
+
+.contact-list__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.contact-list__label {
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+}
+
+[data-theme='dark'] .contact-list__label {
+  color: var(--color-text-muted);
+}
+
+.contact-list__value {
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.contact-list__value:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .contact-layout {
+    grid-template-columns: 240px 1fr;
+    gap: var(--space-lg);
+  }
+
+  .contact-profile {
+    padding-right: var(--space-lg);
+    border-bottom: none;
+  }
+}

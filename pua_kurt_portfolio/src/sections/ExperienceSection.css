@@ -1,0 +1,78 @@
+.experience-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+.experience-card {
+  padding: 0;
+  height: 100%;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+.experience-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.experience-card__badge {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.experience-card__year {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+}
+
+.experience-card__title {
+  margin: 0 0 var(--space-sm);
+  font-family: var(--font-serif);
+  font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+.experience-card__highlights {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.experience-card__highlights li {
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+.experience-card__link {
+  display: inline-block;
+  margin-top: var(--space-sm);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .experience-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+  }
+}
