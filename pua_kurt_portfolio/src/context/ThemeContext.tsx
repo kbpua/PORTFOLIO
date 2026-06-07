@@ -32,7 +32,7 @@ function getStoredPreference(): ThemePreference {
   if (stored === 'light' || stored === 'dark' || stored === 'system') {
     return stored;
   }
-  return 'system';
+  return 'dark';
 }
 
 function resolveTheme(preference: ThemePreference): ResolvedTheme {

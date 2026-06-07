@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import {
   AVAILABILITY,
@@ -16,9 +17,19 @@ import './HeroSection.css';
 const HeroSection = () => {
   const reduceMotion = useReducedMotion();
   const { resolvedTheme } = useTheme();
+  const [photoRevealed, setPhotoRevealed] = useState(false);
   const isDark = resolvedTheme === 'dark';
   const primaryImage = isDark ? PROFILE_IMAGE_DARK : PROFILE_IMAGE_LIGHT;
   const hoverImage = isDark ? PROFILE_IMAGE_HOVER_DARK : PROFILE_IMAGE_HOVER_LIGHT;
+
+  useEffect(() => {
+    setPhotoRevealed(false);
+  }, [hoverImage]);
+
+  const handlePhotoToggle = () => {
+    if (!window.matchMedia('(hover: none)').matches) return;
+    setPhotoRevealed((revealed) => !revealed);
+  };
 
   return (
     <motion.section
@@ -54,7 +65,17 @@ const HeroSection = () => {
         </motion.div>
       </div>
       <motion.figure className="hero__visual" variants={heroItem}>
-        <div className="hero__photo-wrap">
+        <button
+          type="button"
+          className={`hero__photo-wrap${
+            photoRevealed ? ' hero__photo-wrap--active' : ''
+          }`}
+          onClick={handlePhotoToggle}
+          aria-pressed={photoRevealed}
+          aria-label={
+            photoRevealed ? 'Show default photo' : 'Show alternate photo'
+          }
+        >
           <img
             src={asset(primaryImage)}
             alt="Kurt Pua"
@@ -72,12 +93,13 @@ const HeroSection = () => {
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </button>
+        <p className="hero__photo-hint">Tap photo to say hi</p>
         <figcaption className="hero__caption hero__caption--default">
-          {isDark ? 'I\'m from Manila, Philippines, let\'s connect!' : 'I\'m from Manila, Philippines, let\'s connect!'}
+          I&apos;m from Manila, Philippines, let&apos;s connect!
         </figcaption>
         <figcaption className="hero__caption hero__caption--hover" aria-hidden="true">
-          Seems you're interested in my work, let's connect!
+          Seems you&apos;re interested in my work, let&apos;s connect!
         </figcaption>
       </motion.figure>
     </motion.section>

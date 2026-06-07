@@ -59,10 +59,20 @@
 
 .hero__photo-wrap {
   position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
   overflow: hidden;
   border-radius: var(--radius-md);
   aspect-ratio: 4 / 5;
   background: var(--color-bg-alt);
+  cursor: default;
+}
+
+.hero__photo-wrap:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
 }
 
 .hero__photo {
@@ -94,15 +104,55 @@
   filter: grayscale(15%) brightness(0.92) contrast(1.04);
 }
 
-.hero__photo-wrap:hover .hero__photo--primary,
-.hero__photo-wrap:focus-within .hero__photo--primary {
+.hero__photo-wrap--active .hero__photo--primary {
   opacity: 0;
 }
 
-.hero__photo-wrap:hover .hero__photo--alternate,
-.hero__photo-wrap:focus-within .hero__photo--alternate {
+.hero__photo-wrap--active .hero__photo--alternate {
   opacity: 1;
   transform: scale(1.02);
+}
+
+.hero__photo-hint {
+  display: none;
+  margin: 0.4rem 0 0;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+@media (hover: none) {
+  .hero__photo-wrap {
+    cursor: pointer;
+  }
+
+  .hero__photo-hint {
+    display: block;
+  }
+
+  .hero__visual:has(.hero__photo-wrap--active) .hero__photo-hint {
+    color: var(--color-accent);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero__photo-wrap {
+    cursor: pointer;
+  }
+
+  .hero__photo-wrap:hover .hero__photo--primary,
+  .hero__photo-wrap:focus-visible .hero__photo--primary {
+    opacity: 0;
+  }
+
+  .hero__photo-wrap:hover .hero__photo--alternate,
+  .hero__photo-wrap:focus-visible .hero__photo--alternate {
+    opacity: 1;
+    transform: scale(1.02);
+  }
 }
 
 .hero__caption {
@@ -122,13 +172,15 @@
   color: var(--color-accent);
 }
 
+.hero__visual:has(.hero__photo-wrap--active) .hero__caption--default,
 .hero__visual:has(.hero__photo-wrap:hover) .hero__caption--default,
-.hero__visual:has(.hero__photo-wrap:focus-within) .hero__caption--default {
+.hero__visual:has(.hero__photo-wrap:focus-visible) .hero__caption--default {
   display: none;
 }
 
+.hero__visual:has(.hero__photo-wrap--active) .hero__caption--hover,
 .hero__visual:has(.hero__photo-wrap:hover) .hero__caption--hover,
-.hero__visual:has(.hero__photo-wrap:focus-within) .hero__caption--hover {
+.hero__visual:has(.hero__photo-wrap:focus-visible) .hero__caption--hover {
   display: block;
 }
 
@@ -149,8 +201,9 @@
     transition: opacity 0.01ms, filter 0.01ms, transform 0.01ms;
   }
 
+  .hero__photo-wrap--active .hero__photo--alternate,
   .hero__photo-wrap:hover .hero__photo--alternate,
-  .hero__photo-wrap:focus-within .hero__photo--alternate {
+  .hero__photo-wrap:focus-visible .hero__photo--alternate {
     transform: none;
   }
 }

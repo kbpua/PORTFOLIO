@@ -33,7 +33,7 @@ export const socialLinks: SocialLink[] = [
     id: 'linkedin',
     label: 'LinkedIn',
     value: 'Kurt Pua',
-    href: 'https://ph.linkedin.com/in/kurt-pua-365252294',
+    href: 'https://linkedin.com/in/kurt-benedict-wilbur-pua',
     icon: 'linkedin',
   },
   {
