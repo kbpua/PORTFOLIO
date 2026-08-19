@@ -103,7 +103,7 @@ export const projects: Project[] = [
     description:
       'An itinerary finder focused on food and drinks, helping users quickly plan where to eat, sip, and stop next in one streamlined flow.',
     tech: ['React', 'Food & Drinks', 'Itinerary Finder', 'Vercel'],
-    liveUrl: 'https://faro-orph-nu.vercel.app/',
+    liveUrl: 'https://faro-black-eight.vercel.app/',
     image: '/projects/faro.png',
     featured: true,
     status: 'live',
