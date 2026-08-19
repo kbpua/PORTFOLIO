@@ -98,6 +98,38 @@ export const projects: Project[] = [
     },
   },
   {
+    id: 'faro',
+    title: 'Faro',
+    description:
+      'An itinerary finder focused on food and drinks, helping users quickly plan where to eat, sip, and stop next in one streamlined flow.',
+    tech: ['React', 'Food & Drinks', 'Itinerary Finder', 'Vercel'],
+    liveUrl: 'https://faro-orph-nu.vercel.app/',
+    image: '/projects/faro.png',
+    featured: true,
+    status: 'live',
+    preview: {
+      headline: 'A food-and-drinks itinerary finder built for easy plan-making.',
+      role: 'Product builder and frontend developer',
+      aspects: [
+        {
+          label: 'Problem',
+          detail:
+            'Planning a food trip often means juggling multiple apps and posts just to decide where to go next.',
+        },
+        {
+          label: 'Solution',
+          detail:
+            'Faro organizes curated food and drink spots into an itinerary-friendly flow with filters, map context, and quick shortlist actions.',
+        },
+        {
+          label: 'Impact',
+          detail:
+            'Deployed as a standalone web app that turns casual browsing into a clearer eat-and-drink route plan.',
+        },
+      ],
+    },
+  },
+  {
     id: 'padyak',
     title: 'Padyak',
     description:

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Faro project cover</title>
+  <desc id="desc">Dark gradient cover with Faro title and city guide subtitle.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="55%" stop-color="#1f2937" />
+      <stop offset="100%" stop-color="#0b1220" />
+    </linearGradient>
+    <radialGradient id="glow" cx="0.75" cy="0.25" r="0.55">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)" />
+  <rect width="1200" height="675" fill="url(#glow)" />
+  <g fill="none" stroke="#94a3b8" stroke-opacity="0.35" stroke-width="2">
+    <path d="M130 520C240 430 310 400 430 360C570 313 700 270 880 185" />
+    <path d="M200 560C320 470 405 430 520 385C645 338 780 300 960 220" />
+  </g>
+  <g transform="translate(140 150)">
+    <text x="0" y="0" fill="#e2e8f0" font-family="Georgia, 'Times New Roman', serif" font-size="108" font-weight="700">
+      FARO
+    </text>
+    <text x="2" y="64" fill="#cbd5e1" font-family="Arial, Helvetica, sans-serif" font-size="34" letter-spacing="2">
+      CURATED SPOTS &amp; CITY GUIDE
+    </text>
+  </g>
+</svg>
